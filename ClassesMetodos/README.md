@@ -22,3 +22,12 @@ método Acelerar passando o valor do argumento para o parâmetro no método Acelera
 
 Obs- Utilize a nomenclatura Pascal Case para definir os nomes e o modificador de acesso public para todos os
 membros da classe
+
+# Exercício Prático 2
+
+a- Crie um construtor que permita criar um carro somente usando os atributos : Modelo e Montadora (não 
+use a palavra-chave this)
+
+b- Crie um método chamado VelocidadeMaxima que recebe um parâmetro do tipo int chamado potencia que 
+vai retornar um double representando a velocidade máxima do carro
+( Para calcular a velocidade multiplique a potencia por 1.75)
