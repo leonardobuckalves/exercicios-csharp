@@ -23,27 +23,17 @@
 //Obs- Utilize a nomenclatura Pascal Case para definir os nomes e o modificador de acesso public para todos os
 //membros da classe
 
-Carro chevrolet = new Carro();
-chevrolet.Modelo = "Sedan";
-chevrolet.Montadora = "Chevrolet";
-chevrolet.Marca = "Onix";
-chevrolet.Ano = 2016;
-chevrolet.Potencia = 110;
+Carro chevrolet = new Carro("Sedan", "Chevrolet", "Onix", 2016, 110);
 
-Carro ford = new Carro();
-ford.Modelo = "SUV";
-ford.Montadora = "Ford";
-ford.Marca = "EcoSport";
-ford.Ano = 2018;
-ford.Potencia = 120;
+Carro ford = new Carro("SUV", "Ford", "EcoSport", 2018, 120);
 
 Console.WriteLine($"Modelo: {chevrolet.Modelo}, Montadora: {chevrolet.Montadora}, " +
     $"Marca: {chevrolet.Marca}, Ano: {chevrolet.Ano}, Potência: {chevrolet.Potencia}");
-chevrolet.Acelerar();
+chevrolet.Acelerar(chevrolet.Marca);
 
 Console.WriteLine($"Modelo: {ford.Modelo}, Montadora: {ford.Montadora}, " +
     $"Marca: {ford.Marca}, Ano: {ford.Ano}, Potência: {ford.Potencia}");
-ford.Acelerar();
+ford.Acelerar(ford.Marca);
 
 class Carro
 {
@@ -53,8 +43,17 @@ class Carro
     public int Ano { get; set; }
     public int Potencia { get; set; }
 
-    public void Acelerar()
+    public Carro(string modelo, string montadora, string marca, int ano, int potencia)
     {
-        Console.WriteLine("Acelerando...");
+        this.Modelo = modelo;
+        this.Montadora = montadora;
+        this.Marca = marca;
+        this.Ano = ano;
+        this.Potencia = potencia;
+    }
+
+    public void Acelerar(string marca)
+    {
+        Console.WriteLine($"Acelerando o meu {marca}");
     }
 }
