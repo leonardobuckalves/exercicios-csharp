@@ -21,7 +21,7 @@ class Conta
     public decimal Depositar(decimal valor)
     {
         Saldo += valor;
-        Saldo += Saldo + CalculaRemuneracao(Juros);
+        Saldo = Saldo + CalculaRemuneracao(Juros);
         return Saldo;
     }
     public virtual decimal Sacar(decimal valor)
