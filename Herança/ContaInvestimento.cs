@@ -19,7 +19,7 @@ class ContaInvestimento : Conta
     {
         if (Saldo >= valor)
         {
-            Saldo -= valor - CalculaImposto(Imposto);
+            Saldo = Saldo - valor - CalculaImposto(Imposto);
             return Saldo;
         }
         else
