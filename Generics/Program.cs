@@ -1,4 +1,6 @@
-﻿ClasseGenerica<int> objInt = new ClasseGenerica<int>();
+﻿// Exercício 1
+/*
+ClasseGenerica<int> objInt = new ClasseGenerica<int>();
 
 objInt.Adicionar(10);
 objInt.Adicionar(20);
@@ -33,5 +35,24 @@ public class ClasseGenerica<T>
     {
         get { return obj[index]; }
         set { obj[index] = value; }
+    }
+}
+*/
+
+//Exercício 2
+
+AdicionaInteiros<int> adicionaInteiros = new AdicionaInteiros<int>();
+
+var resultado = adicionaInteiros.Adiciona(10, 20);
+Console.WriteLine(resultado);
+
+class AdicionaInteiros<T> where T : struct, IComparable, IConvertible,
+    IFormattable
+{
+    public T Adiciona(T num1, T num2)
+    {
+        dynamic dynamicNum1 = num1;
+        dynamic dynamicNum2 = num2;
+        return dynamicNum1 + dynamicNum2;
     }
 }
